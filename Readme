@@ -1,0 +1,75 @@
+Sorting Algorithm Analyzer:
+A simple command-line Python project designed to demonstrate and compare different sorting algorithms. The program allows the user to select an algorithm, enter a set of numbers, and view the sorted result along with its time complexity and actual execution time.
+The main purpose of this project is to understand how different sorting techniques work and how their performance changes depending on the input size.
+What it does:
+Run the Python program, select a sorting algorithm from the available options, and provide the numbers that need to be sorted. The program performs the sorting operation and displays:
+the original list of numbers
+the sorted list
+the algorithm's Big-O time complexity
+the measured execution time using time.perf_counter()
+
+Algorithms included:
+
+#
+Algorithm
+Time Complexity (worst case)
+1
+Bubble Sort
+O(n²)
+2
+Selection Sort
+O(n²)
+3
+Insertion Sort
+O(n²)
+4
+Merge Sort
+O(n log n)
+5
+Quick Sort
+O(n²) worst, O(n log n) average
+6
+Heap Sort
+O(n log n)
+
+Requirements:
+Python 3 is required to run this project. No additional external libraries are needed apart from Python's built-in modules.
+Running it:
+python3 sorting_project.py
+
+After running the program, the user can select the required sorting algorithm and enter the elements to be sorted.
+Select a sorting algorithm:
+
+Bubble Sort
+Selection Sort
+Insertion Sort
+Merge Sort
+Quick Sort
+
+0. Exit
+
+Select an option and enter the numbers separated by spaces. The program will then display the sorted output and execution time.
+Example
+Enter elements separated by space:
+12 5 8 3 15 7
+
+--- Merge Sort ---
+Original array: [12, 5, 8, 3, 15, 7]
+Sorted array:	[3, 5, 7, 8, 12, 15]
+
+Time Complexity:
+Best Case: O(n log n) Average Case: O(n log n) Worst Case:  O(n log n)
+
+Execution time: 0.000018 seconds
+
+A note on the timing numbers
+The execution time shown by the program depends on the computer, Python version, input size, and other processes running on the system. For very small lists, the measured time may be extremely small and may not clearly show the difference between algorithms.
+For larger inputs, the performance difference becomes easier to observe. Algorithms with O(n²) complexity generally take considerably more time than algorithms with O(n log n) complexity as the input size increases.
+Why I made this
+Sorting is one of the fundamental topics in Design and Analysis of Algorithms. This project makes it easier to understand sorting algorithms by combining their theoretical time complexity with their actual execution time.
+By testing different algorithms on the same input, users can observe how algorithm selection affects performance and understand why efficient algorithms are important for large datasets.
+Conclusion
+This project provides a practical way to study six commonly used sorting algorithms: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, and Heap Sort.
+It demonstrates that although all the algorithms produce the same sorted result, their efficiency can be very different. Comparing their Big-O complexity and actual execution time helps connect theoretical DAA concepts with practical programming.
+License
+This project is created for educational and academic purposes and can be freely used for learning, testing, and modification.
