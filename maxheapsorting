@@ -1,0 +1,44 @@
+# Kruskal's Algorithm
+
+edges = [
+    (10, 1, 2),
+    (6, 1, 3),
+    (5, 2, 3),
+    (15, 2, 4),
+    (4, 3, 4)
+]
+
+# Sort edges by weight
+edges.sort()
+
+parent = [0, 1, 2, 3, 4]
+
+def find(v):
+    if parent[v] == v:
+        return v
+    return find(parent[v])
+
+def union(v1, v2):
+    root1 = find(v1)
+    root2 = find(v2)
+
+    if root1 != root2:
+        parent[root2] = root1
+        return True
+
+    return False
+
+mst = []
+total = 0
+
+for weight, v1, v2 in edges:
+    if union(v1, v2):
+        mst.append((v1, v2, weight))
+        total += weight
+
+print("Minimum Spanning Tree:")
+
+for v1, v2, weight in mst:
+    print(v1, "-", v2, ":", weight)
+
+print("Total Cost =", total)
