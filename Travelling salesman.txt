@@ -1,0 +1,38 @@
+
+from itertools import permutations
+
+# Get the number of cities
+n = int(input("Enter the number of cities: "))
+
+# Get the distance matrix
+distance = []
+
+print("Enter the distance matrix:")
+for i in range(n):
+    row = list(map(int, input().split()))
+    distance.append(row)
+
+# Fix the starting city as city 0
+cities = list(range(1, n))
+
+min_cost = float('inf')
+best_path = []
+
+# Generate all possible routes
+for path in permutations(cities):
+    current_path = [0] + list(path) + [0]
+    cost = 0
+
+    # Calculate total distance
+    for i in range(len(current_path) - 1):
+        cost += distance[current_path[i]][current_path[i + 1]]
+
+    # Update the minimum cost
+    if cost < min_cost:
+        min_cost = cost
+        best_path = current_path
+
+# Display the result
+print("\nShortest route:")
+print(" -> ".join(str(city + 1) for city in best_path))
+print("Minimum travel cost:", min_cost)
